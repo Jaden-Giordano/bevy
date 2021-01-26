@@ -28,6 +28,7 @@ pub mod prelude {
 use bevy_app::prelude::*;
 use bevy_asset::AddAsset;
 use bevy_ecs::{Entity, IntoSystem};
+use bevy_reflect::RegisterTypeBuilder;
 
 pub type DefaultTextPipeline = TextPipeline<Entity>;
 
@@ -36,7 +37,11 @@ pub struct TextPlugin;
 
 impl Plugin for TextPlugin {
     fn build(&self, app: &mut AppBuilder) {
-        app.add_asset::<Font>()
+        app.register_type::<Text>()
+            .register_type::<TextSection>()
+            .register_type::<TextAlignment>()
+            .register_type::<TextStyle>()
+            .add_asset::<Font>()
             .add_asset::<FontAtlasSet>()
             .init_asset_loader::<FontLoader>()
             .add_resource(DefaultTextPipeline::default())

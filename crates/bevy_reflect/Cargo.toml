@@ -14,7 +14,7 @@ keywords = ["bevy"]
 readme = "README.md"
 
 [features]
-bevy = ["bevy_ecs", "bevy_app", "glam", "smallvec"]
+bevy = ["bevy_ecs", "bevy_app", "glam", "smallvec", "glyph_brush_layout"]
 
 [dependencies]
 # bevy
@@ -31,6 +31,7 @@ thiserror = "1.0"
 serde = "1"
 smallvec = { version = "1.4", features = ["serde"], optional = true }
 glam = { version = "0.12.0", features = ["serde"], optional = true }
+glyph_brush_layout = { version = "0.2.1", optional = true }
 
 [dev-dependencies]
 ron = "0.6.2"

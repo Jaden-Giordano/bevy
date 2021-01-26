@@ -16,6 +16,8 @@ mod impls {
     mod glam;
     #[cfg(feature = "smallvec")]
     mod smallvec;
+    #[cfg(feature = "glyph_brush_layout")]
+    mod glyph_brush_layout;
     mod std;
 
     #[cfg(feature = "bevy_app")]
@@ -26,6 +28,8 @@ mod impls {
     pub use self::glam::*;
     #[cfg(feature = "smallvec")]
     pub use self::smallvec::*;
+    #[cfg(feature = "glyph_brush_layout")]
+    pub use self::glyph_brush_layout::*;
     pub use self::std::*;
 }
 
