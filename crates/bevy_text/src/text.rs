@@ -66,14 +66,12 @@ impl Text {
 }
 
 #[derive(Debug, Default, Clone, PartialEq, Reflect)]
-#[reflect_value(PartialEq)]
 pub struct TextSection {
     pub value: String,
     pub style: TextStyle,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Reflect)]
-#[reflect_value(PartialEq)]
 pub struct TextAlignment {
     pub vertical: VerticalAlign,
     pub horizontal: HorizontalAlign,
@@ -89,7 +87,6 @@ impl Default for TextAlignment {
 }
 
 #[derive(Clone, Debug, PartialEq, Reflect)]
-#[reflect_value(PartialEq)]
 pub struct TextStyle {
     pub font: Handle<Font>,
     pub font_size: f32,
