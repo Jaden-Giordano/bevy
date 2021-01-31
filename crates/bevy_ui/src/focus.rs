@@ -4,8 +4,9 @@ use bevy_ecs::prelude::*;
 use bevy_input::{mouse::MouseButton, touch::Touches, Input};
 use bevy_transform::components::GlobalTransform;
 use bevy_window::Windows;
+use bevy_reflect::{Reflect, ReflectComponent};
 
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Copy, Clone, Eq, PartialEq, Debug, Reflect)]
 pub enum Interaction {
     Clicked,
     Hovered,
@@ -18,7 +19,8 @@ impl Default for Interaction {
     }
 }
 
-#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+#[derive(Copy, Clone, Eq, PartialEq, Debug, Reflect)]
+#[reflect(Component)]
 pub enum FocusPolicy {
     Block,
     Pass,

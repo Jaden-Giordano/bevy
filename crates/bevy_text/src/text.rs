@@ -103,7 +103,8 @@ impl Default for TextStyle {
     }
 }
 
-#[derive(Default, Copy, Clone, Debug)]
+#[derive(Default, Copy, Clone, Debug, Reflect)]
+#[reflect(Component)]
 pub struct CalculatedSize {
     pub size: Size,
 }

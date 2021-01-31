@@ -22,6 +22,7 @@ pub mod prelude {
 use bevy_app::prelude::*;
 use bevy_ecs::{IntoSystem, SystemStage};
 use bevy_render::render_graph::RenderGraph;
+use bevy_reflect::RegisterTypeBuilder;
 use update::ui_z_system;
 
 #[derive(Default)]
@@ -34,6 +35,20 @@ pub mod stage {
 impl Plugin for UiPlugin {
     fn build(&self, app: &mut AppBuilder) {
         app.init_resource::<FlexSurface>()
+            .register_type::<Node>()
+            .register_type::<Style>()
+            .register_type::<Val>()
+            .register_type::<AlignItems>()
+            .register_type::<AlignContent>()
+            .register_type::<AlignSelf>()
+            .register_type::<Direction>()
+            .register_type::<Display>()
+            .register_type::<FlexDirection>()
+            .register_type::<JustifyContent>()
+            .register_type::<PositionType>()
+            .register_type::<FlexWrap>()
+            .register_type::<FocusPolicy>()
+            .register_type::<Interaction>()
             .add_stage_before(
                 bevy_app::stage::POST_UPDATE,
                 stage::UI,

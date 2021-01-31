@@ -41,6 +41,7 @@ impl Plugin for TextPlugin {
             .register_type::<TextSection>()
             .register_type::<TextAlignment>()
             .register_type::<TextStyle>()
+            .register_type::<CalculatedSize>()
             .add_asset::<Font>()
             .add_asset::<FontAtlasSet>()
             .init_asset_loader::<FontLoader>()
