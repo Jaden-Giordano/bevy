@@ -45,7 +45,7 @@ impl Plugin for TextPlugin {
             .add_asset::<Font>()
             .add_asset::<FontAtlasSet>()
             .init_asset_loader::<FontLoader>()
-            .add_resource(DefaultTextPipeline::default())
+            .insert_resource(DefaultTextPipeline::default())
             .add_system_to_stage(bevy_app::stage::POST_UPDATE, text2d_system.system())
             .add_system_to_stage(
                 bevy_render::stage::DRAW,

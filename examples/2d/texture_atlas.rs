@@ -5,7 +5,7 @@ fn main() {
     App::build()
         .init_resource::<RpgSpriteHandles>()
         .add_plugins(DefaultPlugins)
-        .add_resource(State::new(AppState::Setup))
+        .insert_resource(State::new(AppState::Setup))
         .add_stage_after(stage::UPDATE, STAGE, StateStage::<AppState>::default())
         .on_state_enter(STAGE, AppState::Setup, load_textures.system())
         .on_state_update(STAGE, AppState::Setup, check_textures.system())
@@ -64,7 +64,7 @@ fn setup(
 
     // set up a scene to display our texture atlas
     commands
-        .spawn(Camera2dBundle::default())
+        .spawn(OrthographicCameraBundle::new_2d())
         // draw a sprite from the atlas
         .spawn(SpriteSheetBundle {
             transform: Transform {
